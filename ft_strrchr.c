@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexandrelecoutre <alexandrelecoutre@st    +#+  +:+       +#+        */
+/*   By: alecoutr <alecoutr@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 15:29:12 by alexandrele       #+#    #+#             */
-/*   Updated: 2022/11/05 15:31:32 by alexandrele      ###   ########.fr       */
+/*   Created: 2022/11/04 17:30:44 by alecoutr          #+#    #+#             */
+/*   Updated: 2022/11/05 22:26:12 by alecoutr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	length;
-	
-	length = 0;
-	while (s[length])
-		length++;
-	return (length);
-}
-
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	cc;
 
 	i = 0;

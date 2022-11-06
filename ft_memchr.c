@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alecoutr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alecoutr <alecoutr@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 02:58:11 by alecoutr          #+#    #+#             */
-/*   Updated: 2022/07/18 17:34:36 by alecoutr         ###   ########.fr       */
+/*   Created: 2022/11/05 22:23:37 by alecoutr          #+#    #+#             */
+/*   Updated: 2022/11/05 22:24:40 by alecoutr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char cc;
-	unsigned char *ss;
+	unsigned char	cc;
+	unsigned char	*ss;
 
 	cc = (unsigned char)c;
 	ss = (unsigned char *)s;

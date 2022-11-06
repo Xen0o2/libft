@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexandrelecoutre <alexandrelecoutre@st    +#+  +:+       +#+        */
+/*   By: alecoutr <alecoutr@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 15:29:12 by alexandrele       #+#    #+#             */
-/*   Updated: 2022/11/05 15:31:32 by alexandrele      ###   ########.fr       */
+/*   Created: 2022/11/05 22:29:18 by alecoutr          #+#    #+#             */
+/*   Updated: 2022/11/05 22:35:42 by alecoutr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
-	if (n)	
+	if (n)
 		return ((unsigned char)*s1 - (unsigned char)*s2);
 	else
 		return (0);

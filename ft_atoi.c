@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alecoutr <alecoutr@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 16:01:32 by alecoutr          #+#    #+#             */
-/*   Updated: 2022/11/06 20:30:33 by alecoutr         ###   ########.fr       */
+/*   Created: 2022/11/06 19:49:33 by alecoutr          #+#    #+#             */
+/*   Updated: 2022/11/06 20:30:16 by alecoutr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_atoi(const char *s)
 {
-	char	*cpydst;
-	char	*cpysrc;
-	size_t	i;
+	int	result;
+	int	sign;
 
-	if (!dst && !src)
-		return (NULL);
-	cpydst = (char *)dst;
-	cpysrc = (char *)src;
-	i = 0;
-	if (cpysrc < cpydst)
-		while (len--)
-			*(cpydst + len) = *(cpysrc + len);
-	else
-	{
-		while (i < len)
-		{
-			cpydst[i] = cpysrc[i];
-			i++;
-		}
-	}
-	return (dst);
+	result = 0;
+	sign = 1;
+	while ((*s == ' ' || *s == '\r' || *s == '\t')
+		|| (*s == '\n' || *s == '\v' || *s == '\f'))
+		s++;
+	if (*s == '-' || *s == '+')
+		if (*s++ == '-')
+			sign = -1;
+	while (*s >= '0' && *s <= '9')
+		result = result * 10 + (*s++ - '0');
+	return (result * sign);
 }
