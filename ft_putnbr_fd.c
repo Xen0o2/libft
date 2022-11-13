@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alecoutr <alecoutr@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 17:30:44 by alecoutr          #+#    #+#             */
-/*   Updated: 2022/11/11 19:03:34 by alecoutr         ###   ########.fr       */
+/*   Created: 2022/11/11 22:06:52 by alecoutr          #+#    #+#             */
+/*   Updated: 2022/11/11 22:15:18 by alecoutr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	cc;
+	unsigned int	nn;
 
-	i = 0;
-	cc = (char) c;
-	while (s[i])
-		i++;
-	i++;
-	while (i)
-		if (s[--i] == cc)
-			return ((char *)s + i);
-	return (0);
+	if (n < 0)
+	{
+		nn = -n;
+		ft_putchar_fd('-', fd);
+	}
+	else
+		nn = n;
+	if (nn > 9)
+		ft_putnbr_fd(nn / 10, fd);
+	ft_putchar_fd((nn % 10) + '0', fd);
 }

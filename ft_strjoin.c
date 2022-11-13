@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alecoutr <alecoutr@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 17:30:44 by alecoutr          #+#    #+#             */
-/*   Updated: 2022/11/11 19:03:34 by alecoutr         ###   ########.fr       */
+/*   Created: 2022/11/07 16:49:15 by alecoutr          #+#    #+#             */
+/*   Updated: 2022/11/07 16:56:27 by alecoutr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	size_t	len1;
+	size_t	len2;
+	char	*result;
 	int		i;
-	char	cc;
 
+	if (!s1 || !s2)
+		return (0);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	result = malloc((len1 + len2 + 1) * sizeof(char));
+	if (!result)
+		return (0);
 	i = 0;
-	cc = (char) c;
-	while (s[i])
-		i++;
-	i++;
-	while (i)
-		if (s[--i] == cc)
-			return ((char *)s + i);
-	return (0);
+	while (*s1)
+		result[i++] = *s1++;
+	while (*s2)
+		result[i++] = *s2++;
+	result[i] = 0;
+	return (result);
 }

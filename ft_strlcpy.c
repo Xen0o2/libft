@@ -6,7 +6,7 @@
 /*   By: alecoutr <alecoutr@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:58:45 by alecoutr          #+#    #+#             */
-/*   Updated: 2022/11/03 18:39:11 by alecoutr         ###   ########.fr       */
+/*   Updated: 2022/11/12 18:06:27 by alecoutr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	length;
-	int		i;
+	size_t	i;
 
 	length = ft_strlen(src);
 	i = 0;
